@@ -144,3 +144,35 @@ li a:hover {
 .profesion p {
     margin-top: 20px;
 }
+
+
+
+footer {
+    width: 100%;
+    background-color: black;
+    margin-top: 20px;
+    color: #d1cccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.dudas {
+    text-align: center;
+    flex-basis: 100%;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+
+.atencion {
+    display: flex;
+justify-content: space-around;
+width: 100%;
+margin-bottom: 50px;
+
+
+}
+
