@@ -1,146 +1,358 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@600&family=Roboto:wght@100&display=swap");
+
 * {
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
-    /*los elementos no se salgan de nuestro contenedor*/
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  /*los elementos no se salgan de nuestro contenedor*/
 }
 
 header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: rgb(13, 5, 1);
-    height: 100px;
-    width: 100%;
-    border-bottom: 5px solid #ea7941;
-    position: fixed;
-    top: 0;
-    left: 0;
-    
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgb(13, 5, 1);
+  height: 100px;
+  width: 100%;
+  border-bottom: 5px solid #ea7941;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
+/***** Carousel ******/
+
+.carousel-container {
+  margin-top: 100px; /* Colocar el carousel debajo de la barra de navegación */
+  position: relative;
+  overflow: hidden;
+  z-index: -1;
+  height: 80vh; /* Ajustar la altura deseada del carousel */
+  font-family: "Edu SA Beginner", cursive;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ocupar el 100% del ancho del carousel */
+  padding-top: 56.25%; /* Ajustar la relación de aspecto (16:9) */
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+}
+
+.carousel-slide img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajustar la imagen sin distorsionar su relación de aspecto */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Color negro con opacidad */
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+}
+
+.carousel-caption h2 {
+  font-size: 50px;
+  color: #cecbcb;
+}
+
+.carousel-caption p {
+  font-size: 16px;
+}
+
+.carousel-controls {
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+  right: 0;
+  justify-content: center; /* Centrar horizontalmente las flechas */
+  display: flex;
+  z-index: 1; /* Asegurarse de que las flechas estén por encima del carousel */
+}
+
+.carousel-controls span {
+  font-size: 24px;
+  color: #c0bcbc;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.carousel-controls .prev {
+  position: absolute;
+  left: 20px; /* Posicionar la flecha izquierda a 20px desde el borde izquierdo */
+}
+
+.carousel-controls .next {
+  position: absolute;
+  right: 20px; /* Posicionar la flecha derecha a 20px desde el borde derecho */
+}
+
+/* Carousel end */
+
 .logo {
-    padding-left: 20px;
-    height: 80px;
-    
+  padding-left: 20px;
+  height: 80px;
 }
 
 nav ul {
-    float: right;
-    margin-right: 20px;
-    display: flex;
-    align-items: center;
+  float: right;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
 }
 
 header ul li {
-    display: inline-block;
-    line-height: 80px;
-    margin: 05px;
+  display: inline-block;
+  line-height: 80px;
+  margin: 05px;
 }
 
 header ul li a {
-    color: #d1cccc;
-    font-size: 18px;
-    padding: 7px 13px;
-    border-radius: 3px;
-    text-transform: uppercase;
+  color: #d1cccc;
+  font-size: 18px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
 }
 
 li a.active,
 li a:hover {
-    color: #ea7941;
-    transition: 0.5s;
+  color: #ea7941;
+  transition: 0.5s;
 }
 
 .dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    padding: 10px;
-    z-index: 1;
-    flex-direction: column;
+  margin-top: -20px;
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  flex-direction: column;
+  border: solid 1px #ea7941;
 }
 
 .dropdown:hover .dropdown-menu {
-    background: black;
-    display: flex;
-    flex-direction: column;
+  background: black;
+  display: flex;
+  flex-direction: column;
 }
 
 .dropdown-menu li {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .icon-user {
-    color: white;
-    padding-right: 50px;
+  color: white;
+  padding-right: 50px;
 }
 
 .navigation {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-    margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 10px;
 }
 
 .search-container {
-    display: flex;
-    background-color: #fff;
-    justify-content: space-between;
-    border-radius: 3px;
-    padding: 3px;
-    width: 70%;
+  display: flex;
+  background-color: #fff;
+  justify-content: space-between;
+  border-radius: 3px;
+  padding: 3px;
+  margin-top: 10px;
+  width: 70%;
 }
 
 .search-container input {
-    border: none;
-    outline: none;
-    background: transparent;
-    padding: 5px;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 5px;
 }
 
 .search-container i {
-    color: #d1cccc;
-    padding: 3px;
+  color: #d1cccc;
+  padding: 3px;
 }
 
 .logo1 {
-    text-align: center;
-    margin-bottom: 20px;
-    margin-top: 100px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.profesiones {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 10px;
+/* CARDS start */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+  font-family: "Times New Roman", Times, serif;
 }
 
-.profesion {
-    background-color: rgb(247, 226, 211);
-    margin-top: 2px;
-    padding: 10px;
-    border-radius: 7px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-left: 5px;
-    width: 400px;
-    height: auto;
-    flex-wrap: wrap;
+.card {
+  width: 300px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(248, 247, 245);
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 1s ease, transform 1s ease;
+  -webkit-transform: translateY(-50px);
+  -moz-transform: translateY(-50px);
+  -ms-transform: translateY(-50px);
+  -o-transform: translateY(-50px);
 }
 
-.profesiones img {
-    width: 350px;
-    height: auto;
+.card img {
+  width: 90%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+.card:hover img {
+  transform: scale(1.1);
+}
+.card.show {
+  opacity: 1;
+  transform: translateX(0);
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
 }
 
-.profesion p {
-    margin-top: 20px;
+.card:hover .card-description {
+  display: block;
+}
+
+.card h3 {
+  font-size: 25px;
+  margin-bottom: 5px;
+  color: #5a5958;
+}
+
+.card-description {
+  display: none;
+  margin-top: 10px;
+  font-size: 14px;
+  padding-bottom: 15px;
+}
+
+.ver-mas-btn {
+  background-color: transparent;
+  border: 2px solid #ea7941;
+  color: #ea7941;
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.ver-mas-btn:hover {
+  color: #fff;
+  background-color: #ea7941;
+}
+
+/* Animaciones */
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* CARDS end */
+
+footer {
+  background-color: black;
+  color: rgb(137, 137, 137);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.dudas {
+  text-align: center;
+  flex-basis: 100%;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+.atencion {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  font-size: 13px;
+  margin-bottom: 30px;
+}
+
+.atencion div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+
+.atencion h3 {
+  padding: 4px;
+}
+
+.atenIconos {
+  display: flex;
+  justify-content: space-around;
+}
+
+.atenIconos i {
+  margin-top: 4px;
+  font-size: 20px;
+}
+
+.contact {
+  display: flex;
 }
