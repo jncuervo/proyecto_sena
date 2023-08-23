@@ -51,7 +51,7 @@ function checkScroll() {
 
   if (logoScrollPosition < windowHeight - 100) {
     logo1.style.opacity = '1';
-    logo1.style.animation = 'slideIn 1s ease';
+    logo1.style.animation = 'slideIn 0.5s ease';
   }
 
   for (let i = 0; i < cards.length; i++) {
