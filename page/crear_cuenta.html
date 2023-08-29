@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Serviexpress</title>
+    <link rel="stylesheet" type="text/css" href="/style/crear_cuenta.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Nav start -->
+    <header>
+        <div class="logo">
+            <a href="" class="enlace">
+                <img src="/imagenes/logo.png" alt="logo" class="logo" />
+            </a>
+        </div>
+        <div class="navigation">
+            <div class="search-container">
+                <input type="text" placeholder="buscar" />
+                <i class="fas fa-search"></i>
+            </div>
+            <ul>
+                <li class="dropdown">
+                    <a href="#">categorias
+                        <i class="fas fa-arrow-alt-circle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Hogar</a></li>
+                        <li><a href="#">Vehiculos</a></li>
+                        <li><a href="#">Belleza</a></li>
+                        <li><a href="#">Mascotas</a></li>
+                    </ul>
+                </li>
+                <li><a href="">ofertas</a></li>
+                <li><a href="/page/crear_cuenta.html">crea tu cuenta</a></li>
+                <li><a href="">ingresa</a></li>
+                <li><a href="">publicar</a></li>
+            </ul>
+        </div>
+        <div class="icon-user">
+            <i class="fas fa-user fa-2x"></i>
+        </div>
+    </header>
+
+    <!-- Nav end -->
+    <div class="form_container">
+
+        <div class="container">
+            
+            <form class="registration-form">
+                <div class="container_logo">
+                    <img src="/imagenes/logo.png" alt="Logo de la empresa" class="logo_form">
+                </div>
+               
+                <div class="form-half">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha-nacimiento">Fecha de nacimiento:</label>
+                        <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-half">
+                    <div class="form-group">
+                        <label for="rol">Rol:</label>
+                        <select id="rol" name="rol" required>
+                            <option value="cliente">Cliente</option>
+                            <option value="prestador">Prestador de servicio</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="contrasena">Contraseña:</label>
+                        <input type="password" id="contrasena" name="contrasena" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="verificar-contrasena">Verificar contraseña:</label>
+                        <input type="password" id="verificar-contrasena" name="verificar-contrasena" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ciudad">Ciudad:</label>
+                        <input type="text" id="ciudad" name="ciudad" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion">Dirección:</label>
+                        <input type="text" id="direccion" name="direccion" required>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button type="submit" class="submit-button">Registrarse</button>
+                    <button type="button" class="cancel-button">Cancelar</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- fORM  -->
+
+</body>
